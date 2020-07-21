@@ -291,3 +291,8 @@ endif (protobuf_BUILD_EXAMPLES)
 if(protobuf_VERBOSE)
   message(STATUS "Protocol Buffers Configuring done")
 endif(protobuf_VERBOSE)
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>
+        )
